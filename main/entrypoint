@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -o allexport && \
+source /run/secrets/ocr-translate-keys && \
+set +o allexport && \
+python main.py

@@ -1,0 +1,15 @@
+services:
+  main:
+    build:
+      context: main
+      labels:
+        com.ocr-translate.build: ${TIER}
+    secrets:
+      - ocr-translate-keys
+    image: ocr-translate-${TIER}:latest
+    container_name: ocr-translate-${TIER}
+    restart: always
+
+secrets:
+  ocr-translate-keys:
+    file: ${TIER}.env

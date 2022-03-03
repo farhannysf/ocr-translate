@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if (( $# > 1 )) || [ "$1" != "dev" ] && [ "$1" != "prod" ]; then
+    echo "Error: invalid argument. Please specify build environment as an argument."
+    echo
+    echo "Valid arguments:"
+    echo "dev"
+    echo "prod"
+    exit 1
+fi
+
+TIER=$1 docker-compose -p "ocr-translate-$1" down
