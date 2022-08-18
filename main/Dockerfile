@@ -1,4 +1,8 @@
-FROM registry1.dso.mil/ironbank/opensource/python/python38:latest
+ARG BASE_REGISTRY=registry1.dso.mil
+ARG BASE_IMAGE=ironbank/opensource/python/python38
+ARG BASE_TAG=latest
+
+FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
 
 WORKDIR /app
 
